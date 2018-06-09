@@ -17,6 +17,6 @@ deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: dist
+  local-dir: dist/code-challenger
   on:
     branch: master
