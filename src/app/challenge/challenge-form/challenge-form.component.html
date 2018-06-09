@@ -1,0 +1,74 @@
+<main class="container mt-3">
+
+  <h2 *ngIf="!id">Create a new challenge</h2>
+  <h2 *ngIf="id">Edit challenge</h2>
+
+  <form #f="ngForm" (ngSubmit)="save(f.value)">
+    <div class="form-group">
+      <label for="name">Challenge name</label>
+      <input
+        #name="ngModel"
+        [(ngModel)]="challenge.name"
+        name="name"
+        id="name"
+        type="text"
+        class="form-control"
+        [class.is-invalid]="name.touched && name.invalid"
+        required />
+      <div class="invalid-feedback">
+        <div *ngIf="name.errors?.required">Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">
+        Description <small class="text-muted">(optional)</small>
+      </label>
+      <input
+        #description="ngModel"
+        [(ngModel)]="challenge.description"
+        name="description"
+        id="description"
+        type="text"
+        class="form-control"
+        [class.is-invalid]="description.touched && description.invalid" />
+      <div class="invalid-feedback">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="readme">Readme</label>
+      <textarea
+        #readme="ngModel"
+        [(ngModel)]="challenge.readme"
+        name="readme"
+        id="readme"
+        class="form-control"
+        [class.is-invalid]="readme.touched && readme.invalid"
+        rows="10">
+      </textarea>
+      <div class="invalid-feedback">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="spec">Test Suite</label>
+      <ngx-monaco-editor
+        name="spec"
+        id="spec"
+        [options]="editorOptions"
+        [(ngModel)]="challenge.spec">
+      </ngx-monaco-editor>
+    </div>
+
+    <button class="btn btn-primary">Save</button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="delete()"
+      *ngIf="id">
+      Delete
+    </button>
+
+  </form>
+</main>

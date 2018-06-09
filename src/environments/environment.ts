@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBCMAHy_kR0UxmlLoI5hTdOL71T-j2CVqc",
+    authDomain: "code-challenger.firebaseapp.com",
+    databaseURL: "https://code-challenger.firebaseio.com",
+    projectId: "code-challenger",
+    storageBucket: "",
+    messagingSenderId: "40664362528"
+  },
+  testRunnerBaseUrl: "/api/function/jasmine-faas"
 };
 
 /*

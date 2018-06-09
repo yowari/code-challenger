@@ -20,7 +20,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/ngx-monaco-editor/assets/monaco",
+                "output": "assets/monaco"
+              }
             ],
             "styles": [
               "src/styles.css"
@@ -50,7 +55,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "code-challenger:build"
+            "browserTarget": "code-challenger:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

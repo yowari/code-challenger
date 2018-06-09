@@ -1,0 +1,55 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">CodeChallenger</a>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/challenges">Challenges</a>
+      </li>
+    </ul>
+
+    <ng-template #anonymousUser>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="login()">Login with GitHub</a>
+        </li>
+      </ul>
+    </ng-template>
+
+    <ul class="navbar-nav" *ngIf="appUser; else anonymousUser">
+      <li ngbDropdown class="nav-item dropdown">
+        <a
+          ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          id="addDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          +
+        </a>
+
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="addDropdown">
+          <a class="dropdown-item" routerLink="/challenges/new">New challenge</a>
+        </div>
+      </li>
+
+      <li ngbDropdown class="nav-item dropdown">
+        <a
+          ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          id="userDropdown"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          <img class="rounded" [src]="appUser.photoURL" width="20" height="20" />
+        </a>
+
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="userDropdown">
+          <a class="dropdown-item" routerLink="/my/challenges">Your challenges</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

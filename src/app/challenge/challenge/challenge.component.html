@@ -1,0 +1,82 @@
+<div class="jumbotron pt-4 m-0">
+  <div class="container">
+    <h5>
+      <a [routerLink]="['/challenges', id]">{{ challenge?.name }}</a>
+    </h5>
+    <p class="text-muted">{{ challenge?.description }}</p>
+  </div>
+</div>
+
+<main class="container">
+  <ngb-tabset class="root-nav">
+
+    <ngb-tab title="Code">
+      <ng-template ngbTabContent>
+        <div class="container-fluid">
+
+          <div class="card my-3">
+            <challenge-progress [result]="result"></challenge-progress>
+          </div>
+
+          <div class="d-flex my-3">
+            <div class="ml-auto">
+              <button
+                type="button"
+                class="btn btn-success btn-sm"
+                (click)="run()">
+                Run ▶️
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 px-1">
+              <div class="card">
+                <div class="card-header">{{ challenge?.name }}.spec.js</div>
+                <div class="card-body p-0">
+                  <ngx-monaco-editor
+                    class="code-editor"
+                    [options]="editorOptions"
+                    [(ngModel)]="challenge.spec">
+                  </ngx-monaco-editor>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 px-1">
+              <div class="card">
+                <div class="card-header">{{ challenge?.name }}.js</div>
+                <div class="card-body p-0">
+                  <ngx-monaco-editor
+                    class="code-editor"
+                    [options]="editorOptions"
+                    [(ngModel)]="source">
+                  </ngx-monaco-editor>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="card w-100 my-2 mx-1">
+              <div class="card-header">
+                <h3 class="h6 m-0">Readme</h3>
+              </div>
+              <article class="card-body" [showdown]="challenge.readme">
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+    <!--ngb-tab title="Readme">
+      <ng-template ngbTabContent>
+        <div class="container">
+          <p>{{ challenge?.readme }}</p>
+        </div>
+      </ng-template>
+    </ngb-tab-->
+  </ngb-tabset>
+
+</main>

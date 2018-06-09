@@ -1,0 +1,13 @@
+<main class="container mt-3">
+  <ul class="list-group list-group-flush ">
+    <li
+      *ngFor="let id of ids()"
+      class="list-group-item">
+      <a [routerLink]="['/challenges', id]">{{ challenges[id].name }}</a>
+      <a
+        [routerLink]="['/challenges', id, 'edit']"
+        class="float-right btn btn-light">Edit</a>
+      <p>{{ challenges[id].description }}</p>
+    </li>
+  </ul>
+</main>

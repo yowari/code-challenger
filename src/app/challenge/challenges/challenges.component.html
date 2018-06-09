@@ -1,0 +1,9 @@
+<main class="container mt-3">
+  <div class="row">
+      <challenge-card
+      *ngFor="let id of ids()"
+      [id]="id"
+      [challenge]="challenges[id]">
+    </challenge-card>
+  </div>
+</main>

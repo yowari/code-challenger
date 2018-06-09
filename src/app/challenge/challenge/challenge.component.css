@@ -1,0 +1,11 @@
+.root-nav > .nav-tabs {
+  transform: translateY(-42px);
+}
+
+.root-nav > .tab-content {
+  transform: translateY(-42px);
+}
+
+.code-editor .editorContainer {
+  height: calc(100vh - 100px);
+}

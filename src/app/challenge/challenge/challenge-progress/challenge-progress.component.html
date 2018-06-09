@@ -1,0 +1,13 @@
+<div class="card-body p-2 d-flex justify-content-around">
+  <div>
+    <strong>Passed <span class="text-muted">{{ result.passed }}/{{ result.total }}</span></strong>
+  </div>
+</div>
+<div class="card-footer p-0">
+  <ngb-progressbar
+    type="success"
+    [value]="result.passed"
+    [max]="result.total"
+    height="7px">
+  </ngb-progressbar>
+</div>
