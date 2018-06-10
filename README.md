@@ -1,11 +1,13 @@
 # CodeChallenger
 
-[![Build Status][s1]][tr] [![license][s2]][li]
+[![Build Status][s1]][tr] [![Docker Automated build][s2]][dc] [![license][s3]][li]
 
 [s1]: https://travis-ci.org/yowari/code-challenger.svg?branch=master
-[s2]: https://img.shields.io/badge/license-MIT-green.svg
+[s2]: https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg
+[s3]: https://img.shields.io/badge/license-MIT-green.svg
 
 [tr]: https://travis-ci.org/yowari/code-challenger
+[dc]: https://hub.docker.com/r/yowari/code-challenger/
 [li]: LICENSE
 
 **CodeChallenger** is a community driven coding challenges to help new and
