@@ -11,7 +11,7 @@ cache:
     - node_modules
 
 script:
-  - ng build --prod --base-href "/code-challenger/"
+  - yarn run build.gh-pages
 
 deploy:
   provider: pages
