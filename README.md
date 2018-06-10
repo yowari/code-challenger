@@ -1,9 +1,12 @@
 # CodeChallenger
 
-[![Build Status][s1]][tr]
+[![Build Status][s1]][tr] [![license][s2]][li]
 
 [s1]: https://travis-ci.org/yowari/code-challenger.svg?branch=master
+[s2]: https://img.shields.io/badge/license-MIT-green.svg
+
 [tr]: https://travis-ci.org/yowari/code-challenger
+[li]: LICENSE
 
 **CodeChallenger** is a community driven coding challenges to help new and
 intermediate developers improve their skills. It provides an online code editor
@@ -47,3 +50,10 @@ in the `dist/` directory.
 - [Nico heart][ni]
 
 [ni]: https://imgur.com/a/b05n4En
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE][li] file for
+details.
+
+[li]: LICENSE
