@@ -12,6 +12,8 @@
 intermediate developers improve their skills. It provides an online code editor
 and test runner.
 
+[![Example Challenge][https://raw.githubusercontent.com/yowari/code-challenger/master/Screenshot.png]]
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your
