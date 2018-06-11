@@ -6,6 +6,6 @@
   transform: translateY(-42px);
 }
 
-.code-editor .editorContainer {
-  height: calc(100vh - 100px);
+.code-editor {
+  height: calc(100vh - 100px) !important;
 }
